@@ -16,6 +16,8 @@
 		260E24BD1F156F1D006F58E5 /* MyTapperGame_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260E24BC1F156F1D006F58E5 /* MyTapperGame_IOSUITests.swift */; };
 		260E24CD1F157269006F58E5 /* TapMeButton-IOS.png in Resources */ = {isa = PBXBuildFile; fileRef = 260E24CC1F157269006F58E5 /* TapMeButton-IOS.png */; };
 		260E24CF1F158D7F006F58E5 /* greendot3-IOS.png in Resources */ = {isa = PBXBuildFile; fileRef = 260E24CE1F158D7F006F58E5 /* greendot3-IOS.png */; };
+		260E24D11F159247006F58E5 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260E24D01F159247006F58E5 /* MainMenuViewController.swift */; };
+		260E24D31F15925F006F58E5 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260E24D21F15925F006F58E5 /* GameOverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		260E24BE1F156F1D006F58E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		260E24CC1F157269006F58E5 /* TapMeButton-IOS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TapMeButton-IOS.png"; sourceTree = "<group>"; };
 		260E24CE1F158D7F006F58E5 /* greendot3-IOS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greendot3-IOS.png"; sourceTree = "<group>"; };
+		260E24D01F159247006F58E5 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		260E24D21F15925F006F58E5 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				260E249C1F156F1D006F58E5 /* AppDelegate.swift */,
 				260E249E1F156F1D006F58E5 /* ViewController.swift */,
 				260E24A01F156F1D006F58E5 /* Main.storyboard */,
+				260E24D01F159247006F58E5 /* MainMenuViewController.swift */,
+				260E24D21F15925F006F58E5 /* GameOverViewController.swift */,
 				260E24A31F156F1D006F58E5 /* Assets.xcassets */,
 				260E24CE1F158D7F006F58E5 /* greendot3-IOS.png */,
 				260E24CC1F157269006F58E5 /* TapMeButton-IOS.png */,
@@ -270,6 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				260E24D31F15925F006F58E5 /* GameOverViewController.swift in Sources */,
+				260E24D11F159247006F58E5 /* MainMenuViewController.swift in Sources */,
 				260E249F1F156F1D006F58E5 /* ViewController.swift in Sources */,
 				260E249D1F156F1D006F58E5 /* AppDelegate.swift in Sources */,
 			);
