@@ -7,8 +7,19 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class GameOverViewController: UIViewController {
+
+class GameOverViewController: UIViewController,GADInterstitialDelegate {
+    var interstitial: GADInterstitial!
+    
+    enum  buttons {
+        case restartButton
+        case mainMenuButton
+    }
+    
+    var buttonTapped:buttons!
+    
     
     @IBOutlet weak var scoreLabel: UILabel!
 
@@ -22,6 +33,10 @@ class GameOverViewController: UIViewController {
         scoreLabel.text = "Score: \(score)"
         tapsPerSecondLabel.text = "\(tapsPerSecond) taps/sec"
         // Do any additional setup after loading the view.
+        interstitial = createAndLoadInterstitial()
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,13 +55,44 @@ class GameOverViewController: UIViewController {
     }
     */
     @IBAction func restartButtonTapped(_ sender: Any) {
+        buttonTapped = .restartButton
+        if interstitial.isReady{
+            interstitial.present(fromRootViewController: self)
+        } else{
+            print("Ad wasn't ready!")
+        }
+ 
+        
         moveToGameView()
     }
     
-    @IBAction func mainMenuButtonTapped(_ sender: Any) {
-       moveToMainView()
+    func createAndLoadInterstitial() -> GADInterstitial{
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7697702478003807/3057125575")
+        interstitial.delegate = self
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        interstitial.load(request)
+        return interstitial
     }
     
+    @IBAction func mainMenuButtonTapped(_ sender: Any) {
+        buttonTapped = .mainMenuButton
+        if interstitial.isReady{
+            interstitial.present(fromRootViewController: self)
+        } else{
+            print("Ad wasn't ready!")
+        }
+
+    }
+    
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        if(buttonTapped == buttons.mainMenuButton){
+            moveToMainView()
+        } else {
+            moveToGameView()
+        }
+    }
     
     func moveToGameView(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
