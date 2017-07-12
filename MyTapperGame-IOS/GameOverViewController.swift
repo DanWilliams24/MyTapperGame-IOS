@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import GoogleMobileAds
+
 
 class GameOverViewController: UIViewController {
+   // var interstitial: GADInterstitial!
+    
+    
     
     @IBOutlet weak var scoreLabel: UILabel!
 
@@ -22,6 +27,13 @@ class GameOverViewController: UIViewController {
         scoreLabel.text = "Score: \(score)"
         tapsPerSecondLabel.text = "\(tapsPerSecond) taps/sec"
         // Do any additional setup after loading the view.
+        
+        /* Under Dev in different branch!
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7697702478003807/3057125575")
+        let request = GADRequest()
+        interstitial.load(request)
+        */
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +52,14 @@ class GameOverViewController: UIViewController {
     }
     */
     @IBAction func restartButtonTapped(_ sender: Any) {
+        /*
+        if interstitial.isReady{
+            interstitial.present(fromRootViewController: self)
+        } else{
+            print("Ad wasn't ready!")
+        }
+ */
+        
         moveToGameView()
     }
     
