@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     
     func setup(){
         score = 0;
-        time = 15;
+        time = 60;
         tapToStart.isEnabled = true;
         tapToStart.isUserInteractionEnabled = true;
         tapToStart.isHidden = false;
